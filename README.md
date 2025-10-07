@@ -245,7 +245,7 @@ You can test the API using Postman.
 1. Import
    [`postman/ecommerce_api.postman_collection.json`](postman/ecommerce_api.postman_collection.json)
 2. (Optional) Import environment
-   [`postman/ecommerce_api_environment.json`](postman/ecommerce_api_environment.json)
+   [`postman/ecommerce_api_environment.json`](postman/Ecommerce_Local..postman_environment.json)
 3. Set
 
    ```
@@ -307,4 +307,5 @@ Feel free to use, modify, and distribute with credit.
 🔗 [GitHub Profile](https://github.com/hasanulkabir-md)
 
 ---
+
 
