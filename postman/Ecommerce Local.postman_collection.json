@@ -1,0 +1,203 @@
+{
+	"info": {
+		"_postman_id": "741c1d42-01fa-4da6-95e8-d431f3e432ef",
+		"name": "Ecommerce Local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "48959259",
+		"_collection_link": "https://hasanul-kabir09-5850688.postman.co/workspace/Md-Hasanul-Kabir's-Workspace~4348b3ea-e8c1-4e70-847c-dd3fa542de5d/collection/48959259-741c1d42-01fa-4da6-95e8-d431f3e432ef?action=share&source=collection_link&creator=48959259"
+	},
+	"item": [
+		{
+			"name": "Register a new user",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Login to get JWT token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"email\": \"kabir@example.com\",\n  \"password\": \"Test@123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/auth/login",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"auth",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/products",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/cart",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1OTgzMjk5OSwianRpIjoiZGE0NGJkMjQtMDMxZC00YjNkLThjNDctNWJkNWU2YTI3ODQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3NTk4MzI5OTksImNzcmYiOiIwYzIzNGRjZS1lZDhmLTRhNzAtOTY0Yi1lZWViY2Y2NGI5NzgiLCJleHAiOjE3NTk4MzM4OTl9.xQkwYeguR58l5VHkM-FcMoAciHGxfDQtuiIH-mo1Mc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"product_id\": 2,\n  \"quantity\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/cart",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"cart"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{base_url}}/orders",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1OTgzMjk5OSwianRpIjoiZGE0NGJkMjQtMDMxZC00YjNkLThjNDctNWJkNWU2YTI3ODQxIiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3NTk4MzI5OTksImNzcmYiOiIwYzIzNGRjZS1lZDhmLTRhNzAtOTY0Yi1lZWViY2Y2NGI5NzgiLCJleHAiOjE3NTk4MzM4OTl9.xQkwYeguR58l5VHkM-FcMoAciHGxfDQtuiIH-mo1Mc0",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/orders",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add Product to Cart",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "View Cart",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "create order",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTc1OTgzNDIzMywianRpIjoiZjU1MTAxODUtZWM5MS00ZGM2LWI3MzItZjc5NTYzMDJiYmQ4IiwidHlwZSI6ImFjY2VzcyIsInN1YiI6IjQiLCJuYmYiOjE3NTk4MzQyMzMsImNzcmYiOiIyZTQ5YmIwNC01MjFiLTRhYWUtYjNiNC0xMjY3YTZmMWE4YzciLCJleHAiOjE3NTk4MzUxMzN9.WIFYZlJJIEyFeiqzCU-rv9YYqQYBha85My7qKtbou4I",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}

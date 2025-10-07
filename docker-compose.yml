@@ -1,0 +1,38 @@
+version: "3.9"
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: mysql-ecommerce
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: newpassword
+      MYSQL_DATABASE: ecommerce
+      MYSQL_USER: ecommerce_user
+      MYSQL_PASSWORD: ecommerce_pass
+    ports:
+      - "3306:3306"
+    volumes:
+      - dbdata:/var/lib/mysql
+    healthcheck:   # ✅ Ensure DB is ready before Flask connects
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-pnewpassword"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  api:
+    build: .
+    container_name: flask-ecommerce
+    restart: always
+    env_file: .env
+    ports:
+      - "5000:5000"
+    depends_on:
+      db:
+        condition: service_healthy   # ✅ wait for MySQL before starting Flask
+    volumes:
+      - .:/app
+    command: flask run --host=0.0.0.0 --port=5000
+
+volumes:
+  dbdata:
