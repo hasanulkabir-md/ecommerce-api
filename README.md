@@ -308,4 +308,3 @@ Feel free to use, modify, and distribute with credit.
 
 ---
 
-Would you like me to include a **clean badge section** (build status, coverage, Python version, etc.) at the top of the README to make it look even more professional on GitHub?
